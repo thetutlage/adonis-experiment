@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "noUnusedLocals": false,
+    "incremental": true,
+    "noUnusedParameters": false,
+    "removeComments": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "strict": true,
+    "types": ["@adonisjs/core", "@adonisjs/bodyparser"],
+    "paths": {
+      "App/*": ["./app/*"],
+      "Contracts/*": ["./contracts/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "rootDir": "./",
+    "baseUrl": "./"
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules", "build"]
+}

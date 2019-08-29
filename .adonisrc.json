@@ -1,0 +1,30 @@
+{
+  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "autoloads": {
+    "App": "app",
+    "Contracts": "contracts"
+  },
+  "directories": {
+    "config": "config",
+    "public": "public",
+    "database": "database",
+    "migrations": "database/migrations",
+    "seeds": "database/seeds",
+    "resources": "resources",
+    "views": "resources/views",
+    "start": "start"
+  },
+  "preloads": [
+    {
+      "file": "start/routes"
+    },
+    {
+      "file": "start/kernel"
+    }
+  ],
+  "copyToBuild": [
+    ".env",
+    ".adonisrc.json",
+    ".gitignore"
+  ]
+}

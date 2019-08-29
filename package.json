@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "adonis-experiment",
+  "version": "0.0.0",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "adonis-next serve --dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@adonisjs/bodyparser": "^3.0.9",
+    "@adonisjs/core": "^2.0.14",
+    "@adonisjs/fold": "^6.1.3",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@adonisjs/cli": "^5.0.2-0",
+    "typescript": "^3.6.2",
+    "youch": "^2.0.10",
+    "youch-terminal": "^1.0.0"
+  }
+}

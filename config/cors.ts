@@ -5,10 +5,24 @@
  * file.
  */
 
-import { CorsConfigContract } from '@ioc:Adonis/Core/Cors';
+import { CorsConfigContract } from '@ioc:Adonis/Core/Cors'
 
 const corsConfig: CorsConfigContract = {
+  /*
+  |--------------------------------------------------------------------------
+  | Enabled
+  |--------------------------------------------------------------------------
+  |
+  | A boolean to enable or disable CORS integration from your AdonisJs
+  | application.
+  |
+  | Setting the value to `true` will enable the CORS for all HTTP request. However,
+  | you can define a function to enable/disable it on per request basis as well.
+  |
+  */
   enabled: false,
+
+  // enabled: (request) => request.url().startsWith('/api')
 
   /*
   |--------------------------------------------------------------------------
@@ -114,6 +128,6 @@ const corsConfig: CorsConfigContract = {
   |
   */
   maxAge: 90,
-};
+}
 
-export default corsConfig;
+export default corsConfig

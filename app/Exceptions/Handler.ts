@@ -3,7 +3,7 @@
 | Http Exception Handler
 |--------------------------------------------------------------------------
 |
-| AdonisJs will forward all exceptions occured during an HTTP request to
+| AdonisJs will forward all exceptions occurred during an HTTP request to
 | the following class. You can learn more about exception handling by
 | reading docs.
 |
@@ -13,11 +13,11 @@
 |
 */
 
-import Logger from '@ioc:Adonis/Core/Logger';
-import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler';
+import Logger from '@ioc:Adonis/Core/Logger'
+import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler'
 
 export default class ExceptionHandler extends HttpExceptionHandler {
-  constructor() {
-    super(Logger);
+  constructor () {
+    super(Logger)
   }
 }

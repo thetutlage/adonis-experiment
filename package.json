@@ -1,22 +1,28 @@
 {
-  "private": true,
-  "name": "adonis-experiment",
+  "name": "yardstick",
   "version": "0.0.0",
-  "main": "server.ts",
+  "private": true,
   "scripts": {
-    "dev": "adonis-next serve --dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@adonisjs/bodyparser": "^3.0.9",
-    "@adonisjs/core": "^2.0.14",
-    "@adonisjs/fold": "^6.1.3",
-    "reflect-metadata": "^0.1.13"
+    "build": "adonis build",
+    "start": "adonis serve --dev"
   },
   "devDependencies": {
-    "@adonisjs/cli": "^5.0.2-0",
-    "typescript": "^3.6.2",
+    "adonis-preset-ts": "^1.0.3",
+    "pino-pretty": "^3.3.0",
+    "tslint": "^5.20.1",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.7.2",
     "youch": "^2.0.10",
     "youch-terminal": "^1.0.0"
+  },
+  "dependencies": {
+    "@adonisjs/bodyparser": "^3.0.15",
+    "@adonisjs/core": "^2.3.0",
+    "@adonisjs/fold": "^6.2.3",
+    "@adonisjs/session": "^2.0.1",
+    "@adonisjs/view": "^1.0.6",
+    "proxy-addr": "^2.0.5",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.16"
   }
 }

@@ -5,7 +5,7 @@
  * file.
  */
 
-import { BodyParserConfigContract } from '@ioc:Adonis/Addons/BodyParser';
+import { BodyParserConfigContract } from '@ioc:Adonis/Addons/BodyParser'
 
 const bodyParserConfig: BodyParserConfigContract = {
   /*
@@ -53,7 +53,9 @@ const bodyParserConfig: BodyParserConfigContract = {
     encoding: 'utf-8',
     limit: '1mb',
     queryString: {},
-    types: ['application/x-www-form-urlencoded'],
+    types: [
+      'application/x-www-form-urlencoded',
+    ],
   },
 
   /*
@@ -70,7 +72,9 @@ const bodyParserConfig: BodyParserConfigContract = {
     encoding: 'utf-8',
     limit: '1mb',
     queryString: {},
-    types: ['text/*'],
+    types: [
+      'text/*',
+    ],
   },
 
   /*
@@ -173,8 +177,10 @@ const bodyParserConfig: BodyParserConfigContract = {
     | The types that will be considered and parsed as multipart body.
     |
     */
-    types: ['multipart/form-data'],
+    types: [
+      'multipart/form-data',
+    ],
   },
-};
+}
 
-export default bodyParserConfig;
+export default bodyParserConfig

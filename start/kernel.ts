@@ -5,11 +5,11 @@
 |
 | This file is used to define middleware for HTTP requests. You can register
 | middleware as a `closure` or an IoC container binding. The bindings are
-| preffered, since they keep this file clean.
+| preferred, since they keep this file clean.
 |
 */
 
-import MiddlewareStore from '@ioc:Adonis/Core/MiddlewareStore';
+import Server from '@ioc:Adonis/Core/Server'
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +20,9 @@ import MiddlewareStore from '@ioc:Adonis/Core/MiddlewareStore';
 | are defined for all HTTP requests.
 |
 */
-MiddlewareStore.register([
-  'Adonis/Core/CorsMiddleware',
+Server.middleware.register([
   'Adonis/Addons/BodyParserMiddleware',
-]);
+])
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +40,5 @@ MiddlewareStore.register([
 | Route.get('dashboard', 'UserController.dashboard').middleware('auth')
 |
 */
-MiddlewareStore.registerNamed({});
+Server.middleware.registerNamed({
+})

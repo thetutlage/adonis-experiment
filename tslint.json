@@ -1,0 +1,4 @@
+{
+  "extends": "adonis-preset-ts/tslint",
+  "rules": {}
+}

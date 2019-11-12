@@ -5,16 +5,14 @@
  * file.
  */
 
-// import * as proxyAddr from 'proxy-addr';
-import Env from '@ioc:Adonis/Core/Env';
-import { LoggerConfigContract } from '@ioc:Adonis/Core/Logger';
-import { RequestConfigContract } from '@ioc:Adonis/Core/Request';
-import { ResponseConfigContract } from '@ioc:Adonis/Core/Response';
-import { RequestLoggerConfigContract } from '@ioc:Adonis/Core/RequestLogger';
+import proxyAddr from 'proxy-addr'
+import Env from '@ioc:Adonis/Core/Env'
+import { LoggerConfigContract } from '@ioc:Adonis/Core/Logger'
+import { RequestConfigContract } from '@ioc:Adonis/Core/Request'
+import { ResponseConfigContract } from '@ioc:Adonis/Core/Response'
+import { ProfilerConfigContract } from '@ioc:Adonis/Core/Profiler'
 
-type HttpOptions = RequestConfigContract &
-  ResponseConfigContract &
-  RequestLoggerConfigContract;
+type HttpOptions = RequestConfigContract & ResponseConfigContract
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +26,7 @@ type HttpOptions = RequestConfigContract &
 | data loss.
 |
 */
-export const appKey: string = Env.getOrFail('APP_KEY') as string;
+export const appKey: string = Env.getOrFail('APP_KEY') as string
 
 /*
 |--------------------------------------------------------------------------
@@ -40,33 +38,6 @@ export const appKey: string = Env.getOrFail('APP_KEY') as string;
 |
 */
 export const http: HttpOptions = {
-  /*
-  |--------------------------------------------------------------------------
-  | Log HTTP requests
-  |--------------------------------------------------------------------------
-  |
-  | Set the value to true, to automatically log every HTTP requests. It is
-  | okay to log requests in production too, but make sure to use a
-  | logging service to collect logs from stdout
-  |
-  */
-  logRequests: true,
-
-  /*
-  |--------------------------------------------------------------------------
-  | Request log data
-  |--------------------------------------------------------------------------
-  |
-  | Optional, custom function to log custom data with every HTTP request
-  | log
-  |
-  */
-  // requestLogData: () => {
-  //   return {
-  //     foo: 'bar',
-  //   }
-  // }
-
   /*
   |--------------------------------------------------------------------------
   | Allow method spoofing
@@ -107,8 +78,7 @@ export const http: HttpOptions = {
   | headers.
   |
   */
-  trustProxy: () => false,
-  // trustProxy: proxyAddr.compile('loopback'),
+  trustProxy: proxyAddr.compile('loopback'),
 
   /*
   |--------------------------------------------------------------------------
@@ -141,7 +111,7 @@ export const http: HttpOptions = {
     secure: false,
     sameSite: false,
   },
-};
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -195,4 +165,43 @@ export const logger: LoggerConfigContract = {
   |
   */
   prettyPrint: Env.get('NODE_ENV') === 'development',
-};
+}
+
+/*
+|--------------------------------------------------------------------------
+| Profiler
+|--------------------------------------------------------------------------
+*/
+export const profiler: ProfilerConfigContract = {
+  /*
+  |--------------------------------------------------------------------------
+  | Toggle profiler
+  |--------------------------------------------------------------------------
+  |
+  | Enable or disable profiler
+  |
+  */
+  enabled: true,
+
+  /*
+  |--------------------------------------------------------------------------
+  | Blacklist actions/row labels
+  |--------------------------------------------------------------------------
+  |
+  | Define an array of actions or row labels that you want to disable from
+  | getting profiled.
+  |
+  */
+  blacklist: [],
+
+  /*
+  |--------------------------------------------------------------------------
+  | Whitelist actions/row labels
+  |--------------------------------------------------------------------------
+  |
+  | Define an array of actions or row labels that you want to whitelist for
+  | the profiler. When whitelist is defined, then `blacklist` is ignored.
+  |
+  */
+  whitelist: [],
+}

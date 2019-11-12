@@ -1,5 +1,19 @@
 /*
 |--------------------------------------------------------------------------
+| Application file
+|--------------------------------------------------------------------------
+|
+| This file is used to define the service providers and ace commands used by
+| your project. This is the first file AdonisJs will load when bootstrapping
+| your app.
+|
+| Note: You cannot use IoC container bindings in this file, since the framework
+| is not ready yet to resolve the IoC container bindings.
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
 | Main providers
 |--------------------------------------------------------------------------
 |
@@ -7,9 +21,12 @@
 |
 */
 export const providers = [
-  '@adonisjs/core/build/providers/AppProvider',
+  '@adonisjs/core',
   '@adonisjs/bodyparser',
-];
+  '@adonisjs/session',
+  '@adonisjs/view',
+  './providers/AppProvider',
+]
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +37,5 @@ export const providers = [
 | an ace command
 |
 */
-export const aceProviders = [];
+export const aceProviders = [
+]

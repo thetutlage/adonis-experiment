@@ -24,8 +24,7 @@ export const providers = [
   '@adonisjs/core',
   '@adonisjs/bodyparser',
   '@adonisjs/session',
-  '@adonisjs/view',
-  './providers/AppProvider',
+  '@adonisjs/view'
 ]
 
 /*

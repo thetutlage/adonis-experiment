@@ -18,5 +18,6 @@
     ".gitignore",
     "resources/views/**/*.edge",
     "public/**"
-  ]
+  ],
+  "commands": ["./commands/Sample"]
 }
